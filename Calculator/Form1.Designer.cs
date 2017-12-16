@@ -184,7 +184,7 @@
             this.buttonDot.Name = "buttonDot";
             this.buttonDot.Size = new System.Drawing.Size(30, 30);
             this.buttonDot.TabIndex = 15;
-            this.buttonDot.Text = ",";
+            this.buttonDot.Text = ".";
             this.buttonDot.UseVisualStyleBackColor = true;
             this.buttonDot.Click += new System.EventHandler(this.button_Click);
             // 
@@ -216,6 +216,7 @@
             this.buttonClear.TabIndex = 18;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonResult
             // 
