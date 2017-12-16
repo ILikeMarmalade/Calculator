@@ -21,19 +21,14 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Click(object sender, EventArgs e)   // Обработка нажатия цифр и их вывод на экран
         {
+            Button button = (Button)sender;
+
             if ((inputBox.Text == "0") || (isOperationPerformed))
                 inputBox.Clear();
 
             isOperationPerformed = false;
-
-            Button button = (Button)sender;
 
             if (button.Text == ".")                             // Ограничение в одну точку
             {
@@ -48,10 +43,20 @@ namespace Calculator
         private void operator_Click(object sender, EventArgs e) // Математические операции
         {
             Button button = (Button)sender;
-            operationPerformed = button.Text;
-            result = Double.Parse(inputBox.Text);
+            if (result != 0)
+            {
+                buttonResult.PerformClick();
+                operationPerformed = button.Text;
 
-            isOperationPerformed = true;
+                isOperationPerformed = true;
+            }
+            else
+            {
+                operationPerformed = button.Text;
+                result = Double.Parse(inputBox.Text);
+
+                isOperationPerformed = true;
+            }
         }
 
         private void buttonResult_Click(object sender, EventArgs e) // Подсчет результата
@@ -73,9 +78,10 @@ namespace Calculator
                 default:
                     break;
             }
+            result = Double.Parse(inputBox.Text);
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void buttonClear_Click(object sender, EventArgs e)     // сброс значений
         {
             inputBox.Text = "0";
             result = 0;
