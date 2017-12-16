@@ -34,7 +34,11 @@ namespace Calculator
             inputBox.Text = inputBox.Text + button.Text;
         }
 
-
+        private void operator_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            result = Double.Parse(inputBox.Text);
+        }
 
     }
 }
