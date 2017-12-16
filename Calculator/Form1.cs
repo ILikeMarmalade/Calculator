@@ -14,6 +14,7 @@ namespace Calculator
     {
         Double result = 0;
         String operationPerformed = "";
+        bool isOperationPerformed = false;
 
         public mainForm()
         {
@@ -25,19 +26,44 @@ namespace Calculator
 
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)   // Обработка нажатия цифр и их вывод на экран
         {
-            if (inputBox.Text == "0")
+            if ((inputBox.Text == "0") || (isOperationPerformed))
                 inputBox.Clear();
 
             Button button = (Button)sender;
+
             inputBox.Text = inputBox.Text + button.Text;
+            isOperationPerformed = false;
         }
 
-        private void operator_Click(object sender, EventArgs e)
+        private void operator_Click(object sender, EventArgs e) // Математические операции
         {
             Button button = (Button)sender;
+            operationPerformed = button.Text;
             result = Double.Parse(inputBox.Text);
+            isOperationPerformed = true;
+        }
+
+        private void buttonResult_Click(object sender, EventArgs e) // Подсчет результата
+        {
+            switch (operationPerformed)
+            {
+                case "+":
+                    inputBox.Text = (result + Double.Parse(inputBox.Text)).ToString();
+                    break;
+                case "-":
+                    inputBox.Text = (result - Double.Parse(inputBox.Text)).ToString();
+                    break;
+                case "*":
+                    inputBox.Text = (result * Double.Parse(inputBox.Text)).ToString();
+                    break;
+                case "/":
+                    inputBox.Text = (result / Double.Parse(inputBox.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
         }
 
     }
