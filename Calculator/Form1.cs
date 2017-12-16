@@ -12,6 +12,9 @@ namespace Calculator
 {
     public partial class mainForm : Form
     {
+        Double result = 0;
+        String operationPerformed = "";
+
         public mainForm()
         {
             InitializeComponent();
@@ -22,14 +25,16 @@ namespace Calculator
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
+            if (inputBox.Text == "0")
+                inputBox.Clear();
 
+            Button button = (Button)sender;
+            inputBox.Text = inputBox.Text + button.Text;
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }
