@@ -23,12 +23,12 @@ namespace Calculator
 
         private void button_Click(object sender, EventArgs e)   // Обработка нажатия цифр и их вывод на экран
         {
-            Button button = (Button)sender;
 
             if ((inputBox.Text == "0") || (isOperationPerformed))
                 inputBox.Clear();
 
             isOperationPerformed = false;
+            Button button = (Button)sender;
 
             if (button.Text == ".")                             // Ограничение в одну точку
             {
@@ -43,18 +43,19 @@ namespace Calculator
         private void operator_Click(object sender, EventArgs e) // Математические операции
         {
             Button button = (Button)sender;
+
             if (result != 0)
             {
                 buttonResult.PerformClick();
                 operationPerformed = button.Text;
-
+                label.Text = result + " " + operationPerformed;
                 isOperationPerformed = true;
             }
             else
             {
                 operationPerformed = button.Text;
                 result = Double.Parse(inputBox.Text);
-
+                label.Text = result + " " + operationPerformed;
                 isOperationPerformed = true;
             }
         }
@@ -79,6 +80,7 @@ namespace Calculator
                     break;
             }
             result = Double.Parse(inputBox.Text);
+            label.Text = "";
         }
 
         private void buttonClear_Click(object sender, EventArgs e)     // сброс значений

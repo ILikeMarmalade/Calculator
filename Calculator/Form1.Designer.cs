@@ -46,6 +46,7 @@
             this.inputBox = new System.Windows.Forms.TextBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonResult = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSeven
@@ -228,11 +229,21 @@
             this.buttonResult.UseVisualStyleBackColor = true;
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label.Location = new System.Drawing.Point(22, 16);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 13);
+            this.label.TabIndex = 20;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(223, 246);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.buttonResult);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.inputBox);
@@ -279,6 +290,7 @@
         private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonResult;
+        private System.Windows.Forms.Label label;
     }
 }
 
