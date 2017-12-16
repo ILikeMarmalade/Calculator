@@ -31,10 +31,18 @@ namespace Calculator
             if ((inputBox.Text == "0") || (isOperationPerformed))
                 inputBox.Clear();
 
+            isOperationPerformed = false;
+
             Button button = (Button)sender;
 
-            inputBox.Text = inputBox.Text + button.Text;
-            isOperationPerformed = false;
+            if (button.Text == ".")                             // Ограничение в одну точку
+            {
+                if(!inputBox.Text.Contains("."))
+                    inputBox.Text = inputBox.Text + button.Text;
+
+            }
+            else
+                inputBox.Text = inputBox.Text + button.Text;
         }
 
         private void operator_Click(object sender, EventArgs e) // Математические операции
@@ -42,6 +50,7 @@ namespace Calculator
             Button button = (Button)sender;
             operationPerformed = button.Text;
             result = Double.Parse(inputBox.Text);
+
             isOperationPerformed = true;
         }
 
@@ -64,6 +73,12 @@ namespace Calculator
                 default:
                     break;
             }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            inputBox.Text = "0";
+            result = 0;
         }
 
     }
