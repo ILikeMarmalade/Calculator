@@ -30,14 +30,7 @@ namespace Calculator
             isOperationPerformed = false;
             Button button = (Button)sender;
 
-            if (button.Text == ".")                             // Ограничение в одну точку
-            {
-                if(!inputBox.Text.Contains("."))
-                    inputBox.Text = inputBox.Text + button.Text;
-
-            }
-            else
-                inputBox.Text = inputBox.Text + button.Text;
+            inputBox.Text = inputBox.Text + button.Text;
         }
 
         private void operator_Click(object sender, EventArgs e) // Математические операции
@@ -79,6 +72,7 @@ namespace Calculator
                 default:
                     break;
             }
+            operationPerformed = "0";
             result = Double.Parse(inputBox.Text);
             label.Text = "";
         }

@@ -41,7 +41,6 @@
             this.buttonTwo = new System.Windows.Forms.Button();
             this.buttonOne = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
-            this.buttonDot = new System.Windows.Forms.Button();
             this.buttonZero = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -179,19 +178,9 @@
             this.buttonPlus.UseVisualStyleBackColor = true;
             this.buttonPlus.Click += new System.EventHandler(this.operator_Click);
             // 
-            // buttonDot
-            // 
-            this.buttonDot.Location = new System.Drawing.Point(97, 193);
-            this.buttonDot.Name = "buttonDot";
-            this.buttonDot.Size = new System.Drawing.Size(30, 30);
-            this.buttonDot.TabIndex = 15;
-            this.buttonDot.Text = ".";
-            this.buttonDot.UseVisualStyleBackColor = true;
-            this.buttonDot.Click += new System.EventHandler(this.button_Click);
-            // 
             // buttonZero
             // 
-            this.buttonZero.Location = new System.Drawing.Point(25, 192);
+            this.buttonZero.Location = new System.Drawing.Point(25, 193);
             this.buttonZero.Name = "buttonZero";
             this.buttonZero.Size = new System.Drawing.Size(66, 30);
             this.buttonZero.TabIndex = 13;
@@ -248,7 +237,6 @@
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.buttonPlus);
-            this.Controls.Add(this.buttonDot);
             this.Controls.Add(this.buttonZero);
             this.Controls.Add(this.buttonMinus);
             this.Controls.Add(this.buttonThree);
@@ -285,7 +273,6 @@
         private System.Windows.Forms.Button buttonTwo;
         private System.Windows.Forms.Button buttonOne;
         private System.Windows.Forms.Button buttonPlus;
-        private System.Windows.Forms.Button buttonDot;
         private System.Windows.Forms.Button buttonZero;
         private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Button buttonClear;
